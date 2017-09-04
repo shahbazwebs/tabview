@@ -1,37 +1,192 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Responsive CSS Tabs</title>
+    <style type="text/css">
+          /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@import url("http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::selection {
+  background: #fe8181; /* WebKit/Blink Browsers */
+  color:#ffffff;
+}
+::-moz-selection {
+  background: #fe8181; /* Gecko Browsers */
+  color:#ffffff;
+}
 
-You can use the [editor on GitHub](https://github.com/shahbazwebs/tabview/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+html, body {
+  height: 100%;
+}
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+body {
+  font: 14px/1 'Open Sans', sans-serif;
+  color: #555;
+  /*background: #000;*/
+}
 
-### Markdown
+h1 {
+  padding: 50px 0;
+  font-weight: 400;
+  text-align: center;
+}
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+p {
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
 
-```markdown
-Syntax highlighted code block
+main {
+  width: 100%;
+  min-height:450px;
+  max-height:450px;
+  padding: 15px;
+  margin: 0 auto;
+  background: #e2e2e2;
+}
 
-# Header 1
-## Header 2
-### Header 3
+section {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ff0000;
+}
 
-- Bulleted
-- List
+input {
+  display: none;
+}
 
-1. Numbered
-2. List
+label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #000;
+  border: 1px solid transparent;
+}
 
-**Bold** and _Italic_ and `Code` text
+label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
 
-[Link](url) and ![Image](src)
-```
+label[for*='1']:before {
+  content: '\f1d7';
+}
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+label[for*='2']:before {
+  content: '\f030';
+}
 
-### Jekyll Themes
+label[for*='3']:before {
+  content: '\f128';
+}
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/shahbazwebs/tabview/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+label[for*='4']:before {
+  content: '\f1a9';
+}
 
-### Support or Contact
+label:hover {
+  color: #bbb;
+  cursor: pointer;
+}
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+input:checked + label {
+  color: #ff0000;
+  border: 1px solid #ff0000;
+  border-top: 2px solid black;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
+}
+
+@media screen and (max-width: 650px) {
+  label {
+    font-size: 0;
+  }
+
+  label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 400px) {
+  label {
+    padding: 15px;
+  }
+}
+    </style>
+  </head>
+
+  <body>
+
+<main>
+  
+  <input id="tab1" type="radio" name="tabs" checked>
+  <label for="tab1">Chat</label>
+    
+  <input id="tab2" type="radio" name="tabs">
+  <label for="tab2">Camera</label>
+    
+  <input id="tab3" type="radio" name="tabs">
+  <label for="tab3">Question & Answer</label>
+    
+  <input id="tab4" type="radio" name="tabs">
+  <label for="tab4">Drupal</label>
+    
+  <section id="content1">
+    <p>
+      Bacon ipsum dolor sit amet beef venison beef ribs kielbasa. Sausage pig leberkas, t-bone sirloin shoulder bresaola. Frankfurter rump porchetta ham. Pork belly prosciutto brisket meatloaf short ribs.
+    </p>
+    <p>
+      Brisket meatball turkey short loin boudin leberkas meatloaf chuck andouille pork loin pastrami spare ribs pancetta rump. Frankfurter corned beef beef tenderloin short loin meatloaf swine ground round venison.
+    </p>
+  </section>
+    
+  <section id="content2">
+    <p>
+      Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin ball tip turducken. Pork belly meatball t-bone bresaola tail filet mignon kevin turkey ribeye shank flank doner cow kielbasa shankle. Pig swine chicken hamburger, tenderloin turkey rump ball tip sirloin frankfurter meatloaf boudin brisket ham hock. Hamburger venison brisket tri-tip andouille pork belly ball tip short ribs biltong meatball chuck. Pork chop ribeye tail short ribs, beef hamburger meatball kielbasa rump corned beef porchetta landjaeger flank. Doner rump frankfurter meatball meatloaf, cow kevin pork pork loin venison fatback spare ribs salami beef ribs.
+    </p>
+    <p>
+      Jerky jowl pork chop tongue, kielbasa shank venison. Capicola shank pig ribeye leberkas filet mignon brisket beef kevin tenderloin porchetta. Capicola fatback venison shank kielbasa, drumstick ribeye landjaeger beef kevin tail meatball pastrami prosciutto pancetta. Tail kevin spare ribs ground round ham ham hock brisket shoulder. Corned beef tri-tip leberkas flank sausage ham hock filet mignon beef ribs pancetta turkey.
+    </p>
+  </section>
+    
+  <section id="content3">
+    <p>
+      Bacon ipsum dolor sit amet beef venison beef ribs kielbasa. Sausage pig leberkas, t-bone sirloin shoulder bresaola. Frankfurter rump porchetta ham. Pork belly prosciutto brisket meatloaf short ribs.
+    </p>
+    <p>
+      Brisket meatball turkey short loin boudin leberkas meatloaf chuck andouille pork loin pastrami spare ribs pancetta rump. Frankfurter corned beef beef tenderloin short loin meatloaf swine ground round venison.
+    </p>
+  </section>
+    
+  <section id="content4">
+    <p>
+      Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin ball tip turducken. Pork belly meatball t-bone bresaola tail filet mignon kevin turkey ribeye shank flank doner cow kielbasa shankle. Pig swine chicken hamburger, tenderloin turkey rump ball tip sirloin frankfurter meatloaf boudin brisket ham hock. Hamburger venison brisket tri-tip andouille pork belly ball tip short ribs biltong meatball chuck. Pork chop ribeye tail short ribs, beef hamburger meatball kielbasa rump corned beef porchetta landjaeger flank. Doner rump frankfurter meatball meatloaf, cow kevin pork pork loin venison fatback spare ribs salami beef ribs.
+    </p>
+    <p>
+      Jerky jowl pork chop tongue, kielbasa shank venison. Capicola shank pig ribeye leberkas filet mignon brisket beef kevin tenderloin porchetta. Capicola fatback venison shank kielbasa, drumstick ribeye landjaeger beef kevin tail meatball pastrami prosciutto pancetta. Tail kevin spare ribs ground round ham ham hock brisket shoulder. Corned beef tri-tip leberkas flank sausage ham hock filet mignon beef ribs pancetta turkey.
+    </p>
+  </section>
+    
+</main>
+
+    
+    
+    
+  </body>
+</html>
